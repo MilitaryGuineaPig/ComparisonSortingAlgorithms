@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 X, insert, heap, merge, quick = [], [], [], [], []
-for line in open('D:\C++ folders\RogalskiProject\python\First/TimeOfProcessingMicroseconds.txt', 'r'):
+for line in open('Results.txt', 'r'):
     values = [float(s) for s in line.split()]
     X.append(values[0])
     insert.append(values[1])
@@ -19,7 +19,7 @@ plt.plot(X, merge, color='b', label='Merge')
 plt.plot(X, quick, color='y', label='Quick')
 
 plt.xlabel("The size of the vector")
-plt.ylabel("Time")
+plt.ylabel("Time (microseconds)")
 plt.title("Comparison of the speed between sorting methods")
 plt.legend()
 

@@ -11,4 +11,3 @@ vector<int> InsertSort(vector<int> Vector) {
     }
     return Vector;
 }
-
