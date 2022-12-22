@@ -1,30 +1,30 @@
 #include"mergeSort.h"
 
 vector<int> sort(vector<int> first, vector<int> second) {
-    vector<int> res;
     int size = first.size() + second.size();
+    vector<int> res(size);
     int counterF = 0, counterN = 0;
     for (int i = 0; i < size; i++) {
         if (counterF >= first.size()) {
-            res.push_back(second[counterN++]);
+            res[i] = (second[counterN++]);
         }
         else if (counterN == second.size() || first[counterF] < second[counterN]) {
-            res.push_back(first[counterF++]);
+            res[i] = (first[counterF++]);
         }
         else {
-            res.push_back(second[counterN++]);
+            res[i] = (second[counterN++]);
         }
     }
     return res;
 }
 void merge(vector<int>& vect, int left, int right, int mid) {
-    vector<int> first;
+    vector<int> first(mid - left + 1);
     for (int i = left; i <= mid; i++){
-        first.push_back(vect[i]);
+        first[i - left] = (vect[i]);
     }
-    vector<int> second;
+    vector<int> second(right - mid);
     for (int j = mid + 1; j <= right; j++) {
-        second.push_back(vect[j]);
+        second[j - mid - 1] = (vect[j]);
     }
     vector<int> res = sort(first, second);
     int index = left;

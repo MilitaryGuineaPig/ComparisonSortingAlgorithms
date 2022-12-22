@@ -1,5 +1,5 @@
 #include "insertSort.h"
-vector<int> InsertSort(vector<int> Vector) {
+vector<int> InsertSort(vector<int> &Vector) {
     for (int i = 1; i < Vector.size(); i++) {
         int val = Vector[i];
         int cur = i;
